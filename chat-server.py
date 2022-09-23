@@ -19,6 +19,8 @@ def clientthread(conn, addr):
 	while True:
 			try:
 				message = conn.recv(2048)
+				message = message.decode('UTF-8')
+
 				if message:
 					print ("<" + addr[0] + "> " + message)
 					message_to_send = "<" + addr[0] + "> " + message
@@ -34,7 +36,7 @@ def broadcast(message, connection):
 	for clients in list_of_clients:
 		if clients!=connection:
 			try:
-				clients.send(message)
+				clients.send(message.encode('UTF-8'))
 			except:
 				clients.close()
 				remove(clients)
