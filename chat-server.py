@@ -4,7 +4,7 @@ from _thread import *
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-IP_address = "10.255.0.164"
+IP_address = "localhost"
 Port = 65432
 
 server.bind((IP_address, Port))

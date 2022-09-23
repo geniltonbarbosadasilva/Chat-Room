@@ -22,7 +22,7 @@ def send_message(IP_address, Port):
         # sys.stdout.write(message)
         sys.stdout.flush()
 
-IP_address = "10.255.0.164"
+IP_address = "localhost"
 Port = 65432
 
 
